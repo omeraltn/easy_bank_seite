@@ -1,0 +1,58 @@
+.articles {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding-inline: 20px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .article {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .card {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: all 0.5s ease;
+    border-radius: 0 0 14px 14px;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &-head {
+      border-radius: 14px 14px 0 0;
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &-body {
+      margin-top: 10px;
+      border-radius: 0 0 14px 14px;
+      padding-inline: 20px;
+      a {
+        display: inline-block;
+        color: gray;
+        margin-block: 10px;
+        font-size: 12px;
+      }
+      h3 {
+        font-size: 22px;
+        line-height: 1.4;
+      }
+      p {
+        color: $grayishBlue;
+        font-size: 14px;
+      }
+    }
+  }
+}
